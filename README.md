@@ -6,8 +6,4 @@ cargo install --git https://github.com/apage43/bite
 
 ---
 
-`bite instance-name ...` finds ec2 instance with Name tag `instance_name`, starts it if it isn't running, waits for ssh to come up, then passes rest of args through to `ssh`:
-
-```
-bite instance-name -A
-```
+`bite instance-name` searches for `Host instance-name` in `.ssh/config` and updates the `HostName` line to point at the private IP of an instance identified with a `# bite: i-1a2b...` comment above the block
